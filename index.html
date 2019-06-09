@@ -1,0 +1,150 @@
+
+<html> 
+<head> 
+<script> 
+
+function DEVELOPER()                                    
+{ 
+    var name = document.forms["RegForm"]["Name"];  
+	var regno = document.forms["RegForm" ]["Regisration"];
+	var kcpe = document.forms["RegForm"]["marks"];     
+	var kcse = document.forms["RegForm"]["grade"];       
+    var email = document.forms["RegForm"]["Email"]; 
+	var faculty = document.forms["RegForm"] ["Faculty"];    
+    var course =  document.forms["RegForm"]["Course"];  
+
+    if (name.value == "")                                  
+    { 
+        alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+
+	if (regno.value == "")                                  
+    { 
+        window.alert("Please enter your Reg. Number."); 
+        regno.focus(); 
+        return false; 
+    } 
+
+    if  (regno.value.indexOf("/", 0) <0)
+    {
+        window.alert("Please enter a valid Reg. Number");
+        regno.focus();
+        return false;
+    }
+
+    if  (kcpe.value == "")
+    {
+        window.alert("Please enter your marks");
+        kcpe.focus();
+        return false;
+    }
+
+	if (kcpe.value<= "0")                                  
+    { 
+        window.alert("Please enter valid marks"); 
+        kcpe.focus(); 
+        return false; 
+    } 
+
+	if (kcpe.value>= "500")                                  
+    { 
+        window.alert("Please enter valid marks"); 
+        kcpe.focus(); 
+        return false; 
+    } 
+
+	 if (kcse.selectedIndex < 1)                  
+    { 
+        alert("Please select your grade."); 
+        kcse.focus(); 
+        return false; 
+    } 
+     
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter your e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a proper e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a proper e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+
+	 if (faculty.selectedIndex < 1)                  
+    { 
+        alert("Please select your Faculty."); 
+        faculty.focus(); 
+        return false; 
+    } 
+   
+    if (course.selectedIndex < 1)                  
+    { 
+        alert("Please select your course."); 
+        course.focus(); 
+        return false; 
+    }  
+   
+}
+</script> 
+  
+</head> 
+   
+<body> 
+<h2 style="text-align:initial"> REGISTRATION FORM<hr> </h2>           
+<form name="RegForm" action="/submit.php" onSubmit="return DEVELOPER()" method="post">  
+      
+    <p>Student Name <input type="text" size=30 name="Name"> </p><br>     
+	<p>Reg. Number  <input type="text" size=20 name="Regisration"> </p><br> 
+	<p>KCPE Marks <input type="text" size=10 name="marks"> </p><br> 
+		<p>KCSE Grade
+    <select type="text" value="" name="grade"> </p><br>
+            <option></option>
+            <option>A</option> 
+            <option>B</option> 
+            <option>C</option> 
+            <option>D</option> 
+            <option>E</option> 
+        </select></p><br><br> 
+	 
+	 <p>E-mail Address <input type="text" size=25 name="Email">  </p><br>
+	 <p>Faculty
+    <select type="text" value="" name="Faculty"> </p><br>
+            <option></option>
+            <option>Medicine and Medical Studies</option> 
+            <option>Arts and Humanities </option> 
+            <option>Agriculture and Environmental Science</option> 
+            <option>Education</option> 
+            <option>Science Engineering and Technology</option> 
+        </select></p><br><br> 
+		
+    <p>course   
+        <select type="text" value="" name="Course"> 
+            <option></option>
+            <option>Nursing</option>
+            <option>Criminology</option> 
+            <option>Computer Science</option> 
+            <option>Communication and Media</option> 
+            <option>Economics and Sociology</option> 
+            <option>Applied Computer Science</option> 
+        </select></p><br><br> 
+    
+    <p><input type="submit" value="Register" name="Submit">      
+       
+    </p>          
+</form>
+
+</body> 
+</html> 
